@@ -1,0 +1,11 @@
+node_modules/
+dist/
+__pycache__/
+.env
+.env.*
+config.json
+data.json
+local/
+state/
+*.pem
+*.key

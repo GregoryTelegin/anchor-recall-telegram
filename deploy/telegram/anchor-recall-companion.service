@@ -1,0 +1,36 @@
+[Unit]
+Description=Anchor Recall shared Telegram companion
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=exec
+User=anchor-recall
+Group=anchor-recall
+WorkingDirectory=/opt/anchor-recall-companion
+ExecStart=/usr/bin/node /opt/anchor-recall-companion/anchor-recall-companion.cjs --config /etc/anchor-recall-companion/config.json
+Restart=on-failure
+RestartSec=5s
+KillSignal=SIGTERM
+KillMode=control-group
+TimeoutStopSec=45s
+UMask=0077
+StateDirectory=anchor-recall-companion
+StateDirectoryMode=0700
+LimitNOFILE=4096
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

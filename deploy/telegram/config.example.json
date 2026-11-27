@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "enabled": false,
+  "botUsername": "YourAnchorRecallBot",
+  "botToken": "REPLACE_WITH_BOT_TOKEN",
+  "stateDirectory": "/var/lib/anchor-recall-companion",
+  "host": "127.0.0.1",
+  "port": 8787,
+  "externalTlsProxy": true,
+  "pairingTtlMinutes": 10,
+  "maxPendingPairings": 1000,
+  "sessionsLocal": [540, 1140],
+  "quietUpdates": true
+}
